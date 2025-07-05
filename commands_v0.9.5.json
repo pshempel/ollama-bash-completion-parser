@@ -1,0 +1,213 @@
+{
+  "version": "0.9.5",
+  "parser_info": {
+    "version": "1.0.0"
+  },
+  "commands": {
+    "cp": {
+      "usage": "cp SOURCE DESTINATION",
+      "args_rule": "ExactArgs",
+      "min_args": 1,
+      "max_args": 1,
+      "flags": [],
+      "short_desc": "Copy a model"
+    },
+    "create": {
+      "usage": "create MODEL",
+      "args_rule": "ExactArgs",
+      "min_args": 1,
+      "max_args": 1,
+      "flags": [
+        {
+          "name": "file",
+          "short": "f",
+          "type": "StringP",
+          "description": "Name of the Modelfile (default \"Modelfile\""
+        },
+        {
+          "name": "quantize",
+          "short": "q",
+          "type": "StringP",
+          "description": "Quantize model to this level (e.g. q4_K_M)"
+        }
+      ],
+      "short_desc": "Create a model from a Modelfile"
+    },
+    "list": {
+      "usage": "list",
+      "aliases": [
+        "ls"
+      ],
+      "min_args": 0,
+      "max_args": -1,
+      "flags": [],
+      "short_desc": "List models"
+    },
+    "ollama": {
+      "usage": "ollama",
+      "min_args": 0,
+      "max_args": -1,
+      "flags": [
+        {
+          "name": "version",
+          "short": "v",
+          "type": "BoolP",
+          "description": "Show version information"
+        }
+      ],
+      "short_desc": "Large language model runner"
+    },
+    "ps": {
+      "usage": "ps",
+      "min_args": 0,
+      "max_args": -1,
+      "flags": [],
+      "short_desc": "List running models"
+    },
+    "pull": {
+      "usage": "pull MODEL",
+      "args_rule": "ExactArgs",
+      "min_args": 1,
+      "max_args": 1,
+      "flags": [
+        {
+          "name": "insecure",
+          "type": "Bool",
+          "description": "Use an insecure registry"
+        }
+      ],
+      "short_desc": "Pull a model from a registry"
+    },
+    "push": {
+      "usage": "push MODEL",
+      "args_rule": "ExactArgs",
+      "min_args": 1,
+      "max_args": 1,
+      "flags": [
+        {
+          "name": "insecure",
+          "type": "Bool",
+          "description": "Use an insecure registry"
+        }
+      ],
+      "short_desc": "Push a model to a registry"
+    },
+    "rm": {
+      "usage": "rm MODEL [MODEL...]",
+      "args_rule": "MinimumNArgs",
+      "min_args": 1,
+      "max_args": -1,
+      "flags": [],
+      "short_desc": "Remove a model"
+    },
+    "run": {
+      "usage": "run MODEL [PROMPT]",
+      "args_rule": "MinimumNArgs",
+      "min_args": 1,
+      "max_args": -1,
+      "flags": [
+        {
+          "name": "keepalive",
+          "type": "String",
+          "description": "Duration to keep a model loaded (e.g. 5m)"
+        },
+        {
+          "name": "verbose",
+          "type": "Bool",
+          "description": "Show timings for response"
+        },
+        {
+          "name": "insecure",
+          "type": "Bool",
+          "description": "Use an insecure registry"
+        },
+        {
+          "name": "nowordwrap",
+          "type": "Bool",
+          "description": "Don't wrap words to the next line automatically"
+        },
+        {
+          "name": "format",
+          "type": "String",
+          "description": "Response format (e.g. json)"
+        },
+        {
+          "name": "think",
+          "type": "Bool",
+          "description": "Whether to use thinking mode for supported models"
+        },
+        {
+          "name": "hidethinking",
+          "type": "Bool",
+          "description": "Hide thinking output (if provided)"
+        }
+      ],
+      "short_desc": "Run a model"
+    },
+    "runner": {
+      "usage": "runner",
+      "min_args": 0,
+      "max_args": -1,
+      "flags": []
+    },
+    "serve": {
+      "usage": "serve",
+      "aliases": [
+        "start"
+      ],
+      "args_rule": "ExactArgs",
+      "min_args": 1,
+      "max_args": 1,
+      "flags": [],
+      "short_desc": "Start ollama"
+    },
+    "show": {
+      "usage": "show MODEL",
+      "args_rule": "ExactArgs",
+      "min_args": 1,
+      "max_args": 1,
+      "flags": [
+        {
+          "name": "license",
+          "type": "Bool",
+          "description": "Show license of a model"
+        },
+        {
+          "name": "modelfile",
+          "type": "Bool",
+          "description": "Show Modelfile of a model"
+        },
+        {
+          "name": "parameters",
+          "type": "Bool",
+          "description": "Show parameters of a model"
+        },
+        {
+          "name": "template",
+          "type": "Bool",
+          "description": "Show template of a model"
+        },
+        {
+          "name": "system",
+          "type": "Bool",
+          "description": "Show system message of a model"
+        },
+        {
+          "name": "verbose",
+          "short": "v",
+          "type": "BoolP",
+          "description": "Show detailed model information"
+        }
+      ],
+      "short_desc": "Show information for a model"
+    },
+    "stop": {
+      "usage": "stop MODEL",
+      "args_rule": "ExactArgs",
+      "min_args": 1,
+      "max_args": 1,
+      "flags": [],
+      "short_desc": "Stop a running model"
+    }
+  }
+}
