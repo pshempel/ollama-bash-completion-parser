@@ -225,7 +225,7 @@ __ollama_get_version() {
     
     local version
     # FIXED: Use --version instead of version command
-    version=$(__ollama_exec --version | head -1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+)?' || echo "unknown")
+    version=$(__ollama_exec --version | head -1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9\.]+)?' || echo "unknown")
     
     if [[ -n "$version" && "$version" != "unknown" ]]; then
         echo "$version" > "$version_cache" 2>/dev/null
